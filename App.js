@@ -12,10 +12,7 @@ export default class App extends React.Component {
     render() {
         return (
             <View>
-                <Text>123</Text>
                 <AddEntry/>
-                <AddEntry/><AddEntry/><AddEntry/><AddEntry/><AddEntry/>
-
             </View>
         )
     }
