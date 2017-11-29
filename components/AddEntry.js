@@ -1,8 +1,38 @@
 import React, {Component} from 'react'
-import {View} from 'react-native'
-import {getMetricMetaInfo} from '../utils/helpers'
+import {View, TouchableNativeFeedback, Text, StyleSheet} from 'react-native'
+import {getMetricMetaInfo, timeToString} from '../utils/helpers'
 import UdaciSlider from './UdaciSlider'
 import UdaciSteppers from './UdaciSteppers'
+import DateHeader from './DateHeader'
+
+function SubmitBtn({onPress}) {
+    return (
+        <TouchableNativeFeedback
+            background={TouchableNativeFeedback.SelectableBackground()}
+            onPress={onPress}>
+            <View style={styles.btn}>
+                <Text style={styles.btnText}>SUBMIT</Text>
+            </View>
+        </TouchableNativeFeedback>
+    )
+}
+const styles = StyleSheet.create({
+    btn: {
+        backgroundColor: '#c11',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 5,
+        borderStyle: 'solid',
+        borderWidth: 2,
+        borderColor: '#811',
+        padding: 10,
+        marginLeft: 40,
+        marginRight: 40
+    },
+    btnText: {
+        color: '#ccc'
+    }
+})
 
 export default class AddEntry extends Component {
 
@@ -44,11 +74,27 @@ export default class AddEntry extends Component {
         }))
     }
 
+    submit = () => {
+        const key = timeToString()
+        const entry = this.state
+
+        // Update Redux
+
+        this.setState(() => ({run: 0, bike: 0, swim: 0, sleep: 0, eat: 0}))
+
+        // Navigate to home
+
+        // Save to "DB"
+
+        // Clear local notification
+    }
+
     render() {
         const metaInfo = getMetricMetaInfo()
 
         return (
             <View>
+                <DateHeader date={(new Date()).toLocaleDateString()}/>
                 {Object.keys(metaInfo).map((key) => {
                     const {getIcon, type, ...rest} = metaInfo[key]
                     const value = this.state[key]
@@ -71,6 +117,7 @@ export default class AddEntry extends Component {
                         </View>
                     )
                 })}
+                <SubmitBtn onPress={this.submit}/>
             </View>
         )
     }
