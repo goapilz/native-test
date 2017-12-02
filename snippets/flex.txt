@@ -33,3 +33,28 @@ in css:
   align-items: flex-start;
   /* etc. */
 }
+
+
+box-sizing: border-box;
+position: relative;
+align-items: stretch;
+flex-shrink: 0;
+align-content: flex-start;
+border: 0 solid black;
+margin: 0;
+padding: 0;
+min-width: 0;
+
+
+import React from 'react';
+import { View } from 'react-native';
+
+const FlexDemo = props => (
+    <View style={{flex: 1}}>
+        <View style={{flex: 1, backgroundColor: 'red'}} />
+        <View style={{flex: 2, backgroundColor: 'green'}} />
+        <View style={{flex: 2, backgroundColor: 'blue'}} />
+    </View>
+);
+
+export default FlexDemo;
