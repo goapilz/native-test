@@ -27,17 +27,9 @@ class History extends Component {
     renderItem = ({today, ...metrics}, formattedDate, key) => (
         <View style={styles.item}>
             {today
-                ? <View>
-                    <DateHeader date={formattedDate}/>
-                    <Text style={styles.noDataText}>
-                        {today}
-                    </Text>
-                </View>
+                ? <View><DateHeader date={formattedDate}/><Text style={styles.noDataText}>{today}</Text></View>
                 : <TouchableOpacity
-                    onPress={() => console.log('Pressed!')}
-                >
-                    <Text>{JSON.stringify(metrics)}</Text>
-                </TouchableOpacity>}
+                    onPress={() => console.log('Pressed!')}><Text>{JSON.stringify(metrics)}</Text></TouchableOpacity>}
         </View>
     )
 
