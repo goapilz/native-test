@@ -1,0 +1,35 @@
+flex general:
+
+flex: 1,
+
+flexDirection: 'row',
+flexDirection: 'column',
+
+justifyContent: 'flex-start',
+justifyContent: 'center',
+justifyContent: 'flex-end',
+justifyContent: 'space-around',
+justifyContent: 'space-between',
+
+alignItems: 'flex-start',
+alignItems: 'center',
+alignItems: 'flex-end',
+alignItems: 'stretch',
+
+flexWrap: 'wrap'
+
+Per item things can be overwritten
+<View style={[styles.box, {flex: 1}]}/>
+<View style={[styles.box, {flex: 2}]}/>
+<View style={[styles.box, {flex: 2, alignSelf: 'flex-end'}]}/>
+
+
+
+in css:
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  /* etc. */
+}
