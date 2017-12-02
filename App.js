@@ -23,7 +23,7 @@ class FlexboxExamples extends Component {
         return (
             <View style={styles.container}>
                 <View style={[styles.box, {flex: 1}]}/>
-                <View style={[styles.box, {flex: 2}]}/>
+                <View style={[styles.box, {flex: 2, alignSelf: 'flex-end'}]}/>
                 <View style={[styles.box, {flex: 1}]}/>
             </View>
         )
