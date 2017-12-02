@@ -1,41 +1,24 @@
-import React, {Component} from 'react'
-import {StyleSheet, Text, ScrollView, View, AppRegistry} from 'react-native'
+import React from 'react'
+import {View, StyleSheet } from 'react-native'
+import AddEntry from './components/AddEntry'
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+import reducer from './reducers'
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        margin: 0,
-        backgroundColor: '#444',
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-        flexWrap: 'wrap'
-    },
-    box: {
-        borderWidth: 1,
-        borderStyle: 'solid',
-        borderColor: 'black',
-        width: '31%',
-        height: 120,
-        backgroundColor: '#aaa',
-        margin: '1%',
+export default class App extends React.Component {
+    componentDidMount() {
+        console.log('before')
+        debugger
+        console.log('after')
     }
-})
-
-class FlexboxExamples extends Component {
 
     render() {
-        const items = []
-        for(let i = 0; i < 50; i++){
-            items.push(<View key={i} style={styles.box}/>)
-        }
         return (
-            <ScrollView>
-                <View style={styles.container}>
-                    {items}
+            <Provider store={createStore(reducer)}>
+                <View style={{flex: 1}}>
+                    <AddEntry/>
                 </View>
-            </ScrollView>
+            </Provider>
         )
     }
 }
-
-export default FlexboxExamples
