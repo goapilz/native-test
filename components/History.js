@@ -9,9 +9,9 @@ import {white} from '../utils/colors'
 import DateHeader from './DateHeader'
 import MetricCard from './MetricCard'
 import {AppLoading} from 'expo'
+import {black} from '../utils/colors'
 
 class History extends Component {
-
     state = {
         ready: false
     }
@@ -63,7 +63,7 @@ class History extends Component {
         const {entries} = this.props
         const {ready} = this.state
         if (ready === false) {
-            return <AppLoading/>
+            return (<AppLoading style={{backgroundColor: black}}/>)
         }
         return (
             <UdaciFitnessCalendar
