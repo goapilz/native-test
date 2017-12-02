@@ -1,24 +1,32 @@
-import React from 'react'
-import {View, Text} from 'react-native'
-import AddEntry from './components/AddEntry'
-import {createStore} from 'redux'
-import {Provider} from 'react-redux'
-import reducer from './reducers'
+import React, { Component }  from 'react'
+import {StyleSheet, Text, View, AppRegistry } from 'react-native'
 
-export default class App extends React.Component {
-    componentDidMount() {
-        console.log('before')
-        debugger
-        console.log('after')
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        margin: 50,
+        backgroundColor: '#00f',
+    },
+    box: {
+        height: 50,
+        width: 50,
+        backgroundColor: '#e76e63',
+        margin: 10,
     }
+})
 
+class FlexboxExamples extends Component {
     render() {
         return (
-            <Provider store={createStore(reducer)}>
-                <View>
-                    <AddEntry/>
-                </View>
-            </Provider>
+            <View style={styles.container}>
+                <View style={styles.box}/>
+                <View style={styles.box}/>
+                <View style={styles.box}/>
+                <View style={styles.box}/>
+                <View style={styles.box}/>
+            </View>
         )
     }
 }
+
+export default FlexboxExamples
