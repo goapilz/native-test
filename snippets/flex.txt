@@ -16,7 +16,7 @@ alignItems: 'center',
 alignItems: 'flex-end',
 alignItems: 'stretch',
 
-flexWrap: 'wrap'
+flexWrap: 'wrap'   (when using this alignItems has no effect)
 
 Per item things can be overwritten
 <View style={[styles.box, {flex: 1}]}/>

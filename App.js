@@ -1,31 +1,82 @@
-import React, { Component }  from 'react'
-import {StyleSheet, Text, View, AppRegistry } from 'react-native'
+import React, {Component} from 'react'
+import {StyleSheet, Text, ScrollView, View, AppRegistry} from 'react-native'
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        margin: 20,
+        margin: 0,
         backgroundColor: '#00f',
         flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: 'flex-start',
+        flexWrap: 'wrap'
     },
     box: {
-        height: 50,
-        width: 50,
+        width: '31%',
+        height: 120,
         backgroundColor: '#e76e63',
-        margin: 10,
+        margin: '1%',
     }
 })
 
 class FlexboxExamples extends Component {
     render() {
         return (
-            <View style={styles.container}>
-                <View style={[styles.box, {flex: 1}]}/>
-                <View style={[styles.box, {flex: 2, alignSelf: 'flex-end'}]}/>
-                <View style={[styles.box, {flex: 1}]}/>
-            </View>
+            <ScrollView>
+                <View style={styles.container}>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                    <View style={styles.box}/>
+                </View>
+            </ScrollView>
         )
     }
 }
