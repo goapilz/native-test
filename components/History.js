@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, Text, StyleSheet, Platform, TouchableOpacity} from 'react-native'
+import {View, Text, StyleSheet, Platform, TouchableOpacity, ActivityIndicator} from 'react-native'
 import {connect} from 'react-redux'
 import {receiveEntries, addEntry} from '../actions'
 import {timeToString, getDailyReminderValue} from '../utils/helpers'
@@ -61,7 +61,7 @@ class History extends Component {
         const {entries} = this.props
         const {ready} = this.state
         if (ready === false) {
-            return (<AppLoading style={{backgroundColor: black}}/>)
+            return (<ActivityIndicator style={{flex: 1}}/>)
         }
         return (
             <UdaciFitnessCalendar
